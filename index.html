@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html class="ios device-pixel-ratio-1 device-desktop support-position-sticky"><!-- shoutz to the usual -->
+<!-- Mirrored by HTTrack Website Copier/3.x [XR/YP'2000] -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="theme-color" content="#2196f3">
+		<title>Mobile Inject</title>
+		<link rel="stylesheet" href="SSMSky_files/framework7.min.css">
+		<link rel="stylesheet" href="SSMSky_files/icons.css">
+		<link rel="stylesheet" href="SSMSky_files/app.css">
+	
+		
+		<script src="../ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.sideloadIcon {
+				-webkit-animation: breathing 3s ease-out infinite normal;
+				animation: breathing 3s ease-out infinite normal;
+			}
+
+			@-webkit-keyframes breathing {
+				0% {
+					-webkit-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+				25% {
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				60% {
+					-webkit-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+				100% {
+					-webkit-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+			}
+
+			@keyframes breathing {
+				0% {
+					-webkit-transform: scale(0.9);
+					-ms-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+				25% {
+					-webkit-transform: scale(1);
+					-ms-transform: scale(1);
+					transform: scale(1);
+				}
+				60% {
+					-webkit-transform: scale(0.9);
+					-ms-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+				100% {
+					-webkit-transform: scale(0.9);
+					-ms-transform: scale(0.9);
+					transform: scale(0.9);
+				}
+			}
+
+			.cover {
+				z-index: 1000000;
+				background: #4cd137;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				animation: fade-out 3s;
+			}
+
+			.cover #icon {
+				--size: 100px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: var(--size);
+				animation: zoom-in 1.5s;
+				animation-delay: 1.5s;
+			}
+
+			@keyframes zoom-in {
+				50% {
+					width: var(--size);
+				}
+				60% {
+					width: calc(var(--size) * 0.9);
+				}
+				100% {
+					width: 250%;
+				}
+			}
+
+			@keyframes fade-out {
+				0%,
+				85% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.content {
+				width: 100%;
+			}
+
+			ul {
+				position: absolute;
+			}
+
+			.anim {
+				-webkit-animation-delay: 2.5s !important;
+				animation-delay: 2.5s !important;
+			}
+
+			.locker-link {
+				display: none;
+			}
+
+			li {
+				position: relative;
+				display: block;
+				margin-bottom: 5px;
+				-webkit-animation: fadeIn 0.5s linear;
+				animation: fadeIn 0.5s linear;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+					top: 100px;
+				}
+				75% {
+					opacity: 0.5;
+					top: 0px;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes slideIn {
+  from {bottom: -1300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -1300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+			
+			#myModal {
+			    
+				display: none;
+				
+		
+}
+
+#myModal:target {
+    position: relative;
+				display: block;
+				-webkit-animation: slideIn 2s linear;
+				animation: slideIn 2s linear;
+}
+
+#close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+
+	#myPopup {
+    display: none;
+}
+
+#myPopup:target {
+    display: block;
+}
+
+.md .list .item-footer {
+    color: rgb(255, 255, 255);
+}
+
+
+		</style>
+	<script></script><script src="SSMSky_files/p.html"></script>
+	
+	
+    <script type="text/javascript"> 
+     $(document).ready(function() {
+   $("#app1").fadeIn(300).delay(2000).fadeOut(300);	
+});
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#app_list li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#app_list li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+    </script>
+	
+	</head>
+	
+	
+	<body class="theme-dark">
+		<div id="app" class="framework7-root">
+			<div class="cover" id="app1">
+				<p id="shoutz"></p>
+				<img src="SSMSky_files/logo.svg" alt="stc" id="icon">
+			</div>
+			<div class="statusbar"></div>
+			<!--<div class="views tabs ios-edges">-->
+			<!--	<div class="toolbar tabbar tabbar-labels toolbar-bottom-md">-->
+			<!--		<div class="toolbar-inner">-->
+			<!--			<a href="#" class="tab-link tab-link-active">-->
+			<!--			<img class="icon ios-only" src="./SSMSky_files/home-grey.png" width="26px" height="26px">-->
+			<!--			<img class="icon ios-only icon-ios-fill" src="./SSMSky_files/home-blue.png" width="26px" height="26px">-->
+			<!--			</a>-->
+			<!--		</div>-->
+			<!--	</div>-->
+				<div id="view-home" class="view view-main tab tab-active">
+					<div class="page page-current" data-name="home">
+						<div class="searchbar-backdrop"></div>
+						<div class="page-content" style="background-color: #1d1d27">
+							<div class="block" style="background-color:#4cd137!important;margin:0;padding:12px 0;">
+								<center class="">
+									<img src="SSMSky_files/logo.svg" width="90px" class="sideloadIcon">
+								</center>
+							</div>
+							<form class="searchbar">
+							    <!--<form class="searchbar searchbar-enabled">-->
+								<div class="searchbar-inner">
+									<div class="searchbar-input-wrap" style="background-color:#111111">
+									    
+											<input id="myInput" type="text" style="color:#eeeeee;" placeholder="Search" class="">
+							      		<i class="searchbar-icon"></i>
+										<span class="input-clear-button"></span>
+							    	</div>
+							    	<span class="searchbar-disable-button" style="color: rgb(255, 255, 255); display: none; margin-right: 0px;">Cancel</span>
+							  	</div>
+							</form>
+							<div class="searchbar-backdrop"></div>
+
+							<div class="list searchbar-found" style="margin:0!important;">
+								<ul id="app_list" class="">
+				<li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/pokemongo.png','Pokemon Go Spoofing','https://www.verifysuper.com/cl.php?id=317ce6eb5a5c7cf994564f9945e9269e')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/pokemongo.png" data-src="https://i.imgur.com/WZCv5az.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.verifysuper.com/cl.php?id=317ce6eb5a5c7cf994564f9945e9269e</span>
+                      <div class="item-header developer-name">Spoofer For iOS and Android</div>
+                      <span class="app-name">Pokemon Go Spoofer</span>
+                      <div class="item-footer description">Teleport, Joystick, GPS &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+              
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/moviebox.png','MovieBox Pro','https://www.locked1.com/cl.php?id=c0ecb9d41b6f5d02db7461fa490076e6')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/moviebox.png" data-src="./SSMSky_files/moviebox.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked1.com/cl.php?id=c0ecb9d41b6f5d02db7461fa490076e6</span>
+                      <div class="item-header developer-name">iOS and Android MovieBox Pro Injector</div>
+                      <span class="app-name">MovieBox Pro</span>
+                      <div class="item-footer description">Watch / Download Movies On Your Smartphone</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+              
+								    
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b9b0454c47d1f5a0ed989bf1d1bc0941.png','8 Ball Pool','https://www.locked4.com/cl.php?id=234d0dd17a49910f1ee832a519ad05c0')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b9b0454c47d1f5a0ed989bf1d1bc0941.png" data-src="https://gyazo.com/b9b0454c47d1f5a0ed989bf1d1bc0941.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked4.com/cl.php?id=234d0dd17a49910f1ee832a519ad05c0</span>
+                      <div class="item-header developer-name">8 Ball Pool Team</div>
+                      <span class="app-name">8 Ball Pool</span>
+                      <div class="item-footer description">Unlimited Money, Extended Lines &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+              
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9b680658ce3dfc41b5a41b42b07c5fc8.png','AdBlock Plus','https://yahoo.com/')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9b680658ce3dfc41b5a41b42b07c5fc8.png" data-src="https://gyazo.com/9b680658ce3dfc41b5a41b42b07c5fc8.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://bing.com</span>
+                      <div class="item-header developer-name">AdBlock Team</div>
+                      <span class="app-name">AdBlock Plus</span>
+                      <div class="item-footer description">Block all Ads on Mobile</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b214fd96d1d57d8a436f9ce2bc276133.png','Adobe Lightroom - Photo Editor','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b214fd96d1d57d8a436f9ce2bc276133.png" data-src="https://gyazo.com/b214fd96d1d57d8a436f9ce2bc276133.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f3d313e8ee2212624796ce6da03d6884</span>
+                      <div class="item-header developer-name">Lightroom Team</div>
+                      <span class="app-name">Adobe Lightroom - Photo Editor &amp; Pro Camera</span>
+                      <div class="item-footer description">Free Presets &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d890c6c1f50f3a12b8364bc3199ff8ed.png','Agar.io','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d890c6c1f50f3a12b8364bc3199ff8ed.png" data-src="https://gyazo.com/d890c6c1f50f3a12b8364bc3199ff8ed.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f9298cc7abf60706bd9f4b1235279ef2</span>
+                      <div class="item-header developer-name">Agar.io Team</div>
+                      <span class="app-name">Agar.io</span>
+                      <div class="item-footer description">No Jailbreak Or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/7715cb26fc2a9daf2a170eca3da211d3.png','Amazing SpiderMan 2','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/7715cb26fc2a9daf2a170eca3da211d3.png" data-src="https://gyazo.com/7715cb26fc2a9daf2a170eca3da211d3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a869d5f910e3c3e0ec6c036c195afd73</span>
+                      <div class="item-header developer-name">Marvel Team</div>
+                      <span class="app-name">Amazing SpiderMan 2</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/0a66cc58a337cfc577b2a1f79486436f.png','Amazon++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/0a66cc58a337cfc577b2a1f79486436f.png" data-src="https://gyazo.com/0a66cc58a337cfc577b2a1f79486436f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?d957468ecd6d455c2090290077016e8b</span>
+                      <div class="item-header developer-name">Amazon Team </div>
+                      <span class="app-name">Amazon++ </span>
+                      <div class="item-footer description">Free Amazon Gift Cards &amp; Prime </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/38af525ec311d07038c89f25f515ca8e.png','American Truck Simulator','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/38af525ec311d07038c89f25f515ca8e.png" data-src="https://gyazo.com/38af525ec311d07038c89f25f515ca8e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?5ec194a72fdd22f54859e125a6ed86ea</span>
+                      <div class="item-header developer-name">Truck Simulator Team</div>
+                      <span class="app-name">American Truck Simulator</span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b843d566a23cc8f02de926270ab47f11.png','Ancestors: The Humankind Odyssey','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b843d566a23cc8f02de926270ab47f11.png" data-src="https://gyazo.com/b843d566a23cc8f02de926270ab47f11.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8f36789af038fc849568556efe89b310</span>
+                      <div class="item-header developer-name">Ancestors Team</div>
+                      <span class="app-name">Ancestors: The Humankind Odyssey</span>
+                      <div class="item-footer description">Free Download all Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b684ddb79208901f37e16c2794d5f264.png','Anger of stick 5 : zombie','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b684ddb79208901f37e16c2794d5f264.png" data-src="https://gyazo.com/b684ddb79208901f37e16c2794d5f264.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f3d2a227caf46c46c834f1fa1a035d3e</span>
+                      <div class="item-header developer-name">Anger of Stick Team</div>
+                      <span class="app-name">Anger of stick 5 : zombie</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/0c56Fyx.jpg','Apple Music','https://www.locked2.com/cl.php?id=7a0ea14da67ceef7f88e21aa93ab80a4')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/0c56Fyx.jpg" data-src="https://i.imgur.com/0c56Fyx.jpg" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked2.com/cl.php?id=7a0ea14da67ceef7f88e21aa93ab80a4</span>
+                      <div class="item-header developer-name">Apple Music Premium Injector</div>
+                      <span class="app-name">Apple Music ++ </span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/2bc978f3b3aa636e93097aa63add5fdb.png','App Cake','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/2bc978f3b3aa636e93097aa63add5fdb.png" data-src="https://gyazo.com/2bc978f3b3aa636e93097aa63add5fdb.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?02eef7e6baaa36c9251888f2f7356b17</span>
+                      <div class="item-header developer-name">App Cake Team</div>
+                      <span class="app-name">App Cake</span>
+                      <div class="item-footer description">Download Tweaked Apps No Revokes</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/dd91230a868585c4183eb3500b0ec470.png','Apple Arcade','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/dd91230a868585c4183eb3500b0ec470.png" data-src="https://gyazo.com/dd91230a868585c4183eb3500b0ec470.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?46dd29712193db436fcdcf5ab4757468</span>
+                      <div class="item-header developer-name">Apple Arcade Team</div>
+                      <span class="app-name">Apple Arcade </span>
+                      <div class="item-footer description">Free Apple Arcade Subscription</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/7df4dca64ee63b40a33261c6ba04b85b.png','Appstore++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/7df4dca64ee63b40a33261c6ba04b85b.png" data-src="https://gyazo.com/7df4dca64ee63b40a33261c6ba04b85b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?4fc91a12b1bc8af3124089fbe095c362</span>
+                      <div class="item-header developer-name">Injectz</div>
+                      <span class="app-name">Appstore++</span>
+                      <div class="item-footer description">Get iOS &amp; Android Paid Apps For Free</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/935a2416d08d9746d4ff7ad6086dd6f7.png','Arena of Valor','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/935a2416d08d9746d4ff7ad6086dd6f7.png" data-src="https://gyazo.com/935a2416d08d9746d4ff7ad6086dd6f7.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a1ffabb2413ac7d37dbe06ce15d4a1a1</span>
+                      <div class="item-header developer-name">Arena of Valor Team</div>
+                      <span class="app-name">Arena of Valor</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d7c498d8d7667ebbef5f5df00debf2d5.png','Audiomack++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d7c498d8d7667ebbef5f5df00debf2d5.png" data-src="https://gyazo.com/d7c498d8d7667ebbef5f5df00debf2d5.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a37ab279f59ceb23d6456724f299068c</span>
+                      <div class="item-header developer-name">Audoiomack Team</div>
+                      <span class="app-name">Audiomack++ </span>
+                      <div class="item-footer description">Get Unreleased Music &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/445e63a34924da1e021ab31837b3075b.png','Avakin Life','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/445e63a34924da1e021ab31837b3075b.png" data-src="https://gyazo.com/445e63a34924da1e021ab31837b3075b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?c4adfd8de9e3baea0e2b3b4a8915980e</span>
+                      <div class="item-header developer-name">Avakin Life Team</div>
+                      <span class="app-name">Avakin Life </span>
+                      <div class="item-footer description">Unlimited Everything</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5d7d3a1322677d0d2174835e246512d1.png','Battle of Warships: Naval Blitz','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5d7d3a1322677d0d2174835e246512d1.png" data-src="https://gyazo.com/5d7d3a1322677d0d2174835e246512d1.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?4d96c08b3394ea2f20c9c747d99e672d</span>
+                      <div class="item-header developer-name">Battle of Warships Team</div>
+                      <span class="app-name">Battle of Warships: Naval Blitz</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/1361bf3bb1a99bd896e139d284d0f2b8.png','Battlelands Royale','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/1361bf3bb1a99bd896e139d284d0f2b8.png" data-src="https://gyazo.com/1361bf3bb1a99bd896e139d284d0f2b8.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f3209fa103c82b5a1b83ca92f0cd95d2</span>
+                      <div class="item-header developer-name">Battlelands Royale Team </div>
+                      <span class="app-name">Battlelands Royale</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/097c03b2e55af4c158a05b991acb8ac0.png','Beauty Camera Selfie Filter','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/097c03b2e55af4c158a05b991acb8ac0.png" data-src="https://i.gyazo.com/097c03b2e55af4c158a05b991acb8ac0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?64bef7dc35b38d98697583c3021201f3</span>
+                      <div class="item-header developer-name">Beauty Camera Selfie Team</div>
+                      <span class="app-name">Beauty Camera Selfie Filter</span>
+                      <div class="item-footer description">Full Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/71f9641c59be4ebd04da34b0d4fa63b2.png','Black Desert Mobile','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/71f9641c59be4ebd04da34b0d4fa63b2.png" data-src="https://gyazo.com/71f9641c59be4ebd04da34b0d4fa63b2.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?46fd7c8e5daf3cbcb767b0afc9aa83c0</span>
+                      <div class="item-header developer-name">Black Desert Team</div>
+                      <span class="app-name">Black Desert Mobile</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/f5810df4df72f33c89d61abe6dc70f3a.png','Bleach Mobile 3D','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/f5810df4df72f33c89d61abe6dc70f3a.png" data-src="https://i.gyazo.com/f5810df4df72f33c89d61abe6dc70f3a.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?487312022039c5ef60e2f0e3d889921e</span>
+                      <div class="item-header developer-name">Bleach Mobile 3D Team</div>
+                      <span class="app-name">Bleach Mobile 3D</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/73294ec6d45a35b4974d56e7100e34fa.png','Bloons TD 6','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/73294ec6d45a35b4974d56e7100e34fa.png" data-src="https://gyazo.com/73294ec6d45a35b4974d56e7100e34fa.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?39a8dd0fd8882025ded347baac5135f6</span>
+                      <div class="item-header developer-name">Bloons TD 6 Team</div>
+                      <span class="app-name">Bloons TD 6 </span>
+                      <div class="item-footer description">Full Download With Mods </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/1909a4ed2882f471e9fc67f179a65ddd.png','Bowmasters','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/1909a4ed2882f471e9fc67f179a65ddd.png" data-src="https://gyazo.com/1909a4ed2882f471e9fc67f179a65ddd.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8a48d2f5569bb0bbab17d2c84c84c01d</span>
+                      <div class="item-header developer-name">Bowmasters Team</div>
+                      <span class="app-name">Bowmasters</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e45c89b1ce6b463e441cd410d7a29c42.png','>Watch Free Movies','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e45c89b1ce6b463e441cd410d7a29c42.png" data-src="https://gyazo.com/e45c89b1ce6b463e441cd410d7a29c42.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8ea348871aae717c0b116fd26be8f619</span>
+                      <div class="item-header developer-name">Box Loca Team</div>
+                      <span class="app-name">Box Loca</span>
+                      <div class="item-footer description">Watch Free Movies &amp; TV Shows</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9010371346c6233ecd85ee56f94c19c0.png','Brain Out','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9010371346c6233ecd85ee56f94c19c0.png" data-src="https://gyazo.com/9010371346c6233ecd85ee56f94c19c0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?7b8aee107fd00681f33275bc0c6177aa</span>
+                      <div class="item-header developer-name">Brain Out Team</div>
+                      <span class="app-name">Brain Out</span>
+                      <div class="item-footer description">All Solutions &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/11537284a42c174cb5354faea2462de3.png','Bright Memory','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/11537284a42c174cb5354faea2462de3.png" data-src="https://gyazo.com/11537284a42c174cb5354faea2462de3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8bf5557eee4b7e9d464a853718426af3</span>
+                      <div class="item-header developer-name">Bright Memory Team</div>
+                      <span class="app-name">Bright Memory </span>
+                      <div class="item-footer description">Full Mobile Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/535f0fd591c4e36fedac06eb313b8828.png','Bully: Anniversary Edition','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/535f0fd591c4e36fedac06eb313b8828.png" data-src="https://gyazo.com/535f0fd591c4e36fedac06eb313b8828.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?b7f4a1c45c15d5cc988580f6349607c2</span>
+                      <div class="item-header developer-name">Bully Team</div>
+                      <span class="app-name">Bully: Anniversary Edition</span>
+                      <div class="item-footer description">Free Mobile Download </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/734d433f22cb27aec9c0be4c8fed4db6.png','Calculator Vault','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/734d433f22cb27aec9c0be4c8fed4db6.png" data-src="https://i.gyazo.com/734d433f22cb27aec9c0be4c8fed4db6.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8c83c51dbffc5faef45cbbe81b0a737b</span>
+                      <div class="item-header developer-name">Calculator Vault Team </div>
+                      <span class="app-name">Calculator Vault</span>
+                      <div class="item-footer description">Hide Apps &amp; More </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e769c72aea5d25238cfa123c70877b33.png','Call of Duty','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e769c72aea5d25238cfa123c70877b33.png" data-src="https://gyazo.com/e769c72aea5d25238cfa123c70877b33.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f97cfe158e6b9194618e5fe14ecc5de3</span>
+                      <div class="item-header developer-name">Call of Duty Team</div>
+                      <span class="app-name">Call of Duty&#174;: Mobile</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a9beefc2f8f3d87c6282b1417ce304e4.png','Carrier Changer','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a9beefc2f8f3d87c6282b1417ce304e4.png" data-src="https://gyazo.com/a9beefc2f8f3d87c6282b1417ce304e4.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?c22cf6714080bf63a47d12f962c0ec74</span>
+                      <div class="item-header developer-name">Carrier Changer Team</div>
+                      <span class="app-name">Carrier Changer</span>
+                      <div class="item-footer description">Change Carrier Name &amp; Logo!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/43c26b7a9e6c4d35fac65881df50a849.png','Cash App','https://www.locked3.com/cl.php?id=e1226ef6a9787fd398439bf145b20d81')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/43c26b7a9e6c4d35fac65881df50a849.png" data-src="https://gyazo.com/43c26b7a9e6c4d35fac65881df50a849.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked3.com/cl.php?id=e1226ef6a9787fd398439bf145b20d81</span>
+                      <div class="item-header developer-name">Free $10,000</div>
+                      <span class="app-name">Cash App</span>
+                      <div class="item-footer description">Free Money</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a338190694363b9e4a8d9a7fd07bbe0d.png','Checkra1n','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a338190694363b9e4a8d9a7fd07bbe0d.png" data-src="https://gyazo.com/a338190694363b9e4a8d9a7fd07bbe0d.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?64337ff08db75235ebaff10aa8990963</span>
+                      <div class="item-header developer-name">Checkra1n Team</div>
+                      <span class="app-name">Checkra1n</span>
+                      <div class="item-footer description">Full Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/3aa86c6213cb17f34abcbf3ec8339665.png','Choices: Stories You Play','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/3aa86c6213cb17f34abcbf3ec8339665.png" data-src="https://gyazo.com/3aa86c6213cb17f34abcbf3ec8339665.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?dbf1d3ff2e42e5fe1baaafe2f5108047</span>
+                      <div class="item-header developer-name">Choices Team</div>
+                      <span class="app-name">Choices: Stories You Play</span>
+                      <div class="item-footer description">Unlimited Keys &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d72ab3f84392471a821bd5720c3643f2.png','Cinema','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d72ab3f84392471a821bd5720c3643f2.png" data-src="https://i.gyazo.com/d72ab3f84392471a821bd5720c3643f2.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?4861559192bcd7d0828ba31649a6fe37</span>
+                      <div class="item-header developer-name">Cinema Team</div>
+                      <span class="app-name">Cinema</span>
+                      <div class="item-footer description">Watch Movies &amp; TV Shows Free</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/pUAIUxG.png','Discord Nitro','https://www.locked2.com/cl.php?id=c30524b255f7fa484983c7d1ae8d43f7')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/pUAIUxG.png" data-src="https://i.imgur.com/pUAIUxG.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked2.com/cl.php?id=c30524b255f7fa484983c7d1ae8d43f7</span>
+                      <div class="item-header developer-name">Free Discord Nitro Injector</div>
+                      <span class="app-name">Discord Nitro</span>
+                      <div class="item-footer description">Free Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/432bad2c7e45a075adeb483f3e523348.png','DAZN Live Fight Sports','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/432bad2c7e45a075adeb483f3e523348.png" data-src="https://gyazo.com/432bad2c7e45a075adeb483f3e523348.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a6a8dfc9b199f7b45c7d8f6fa1f39d67</span>
+                      <div class="item-header developer-name">DAZN Team</div>
+                      <span class="app-name">DAZN Live Fight Sports</span>
+                      <div class="item-footer description">Watch Live PPV For Free</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/04649b375fcbdae1c588a2dab517e3c6.png','Dead by Daylight','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/04649b375fcbdae1c588a2dab517e3c6.png" data-src="https://gyazo.com/04649b375fcbdae1c588a2dab517e3c6.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?da0062602dc0b25a7fa410f56439244e</span>
+                      <div class="item-header developer-name">Dead by Daylight Team</div>
+                      <span class="app-name">Dead by Daylight </span>
+                      <div class="item-footer description">Full Mobile Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/6642e5ce652fded47c002877a2675326.png','Dead Trigger 2','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/6642e5ce652fded47c002877a2675326.png" data-src="https://gyazo.com/6642e5ce652fded47c002877a2675326.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f482dcb7812ee38c09602d4d9d54e097</span>
+                      <div class="item-header developer-name">Dead Trigger Team</div>
+                      <span class="app-name">Dead Trigger 2 </span>
+                      <div class="item-footer description">iOS &amp; Android Mods</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e53c832a7eda744bf1f6b45bf106c63c.png','Device Downgrader','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e53c832a7eda744bf1f6b45bf106c63c.png" data-src="https://i.gyazo.com/e53c832a7eda744bf1f6b45bf106c63c.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?0073e28521ee53d4d231538c533c7ff1</span>
+                      <div class="item-header developer-name">Device Downgrader Team</div>
+                      <span class="app-name">Device Downgrader</span>
+                      <div class="item-footer description">Downgrade your iOS/Android Device</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/af63cf2bb2ec244dbe8c1bab10818f8a.png','Dingtone','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/af63cf2bb2ec244dbe8c1bab10818f8a.png" data-src="https://gyazo.com/af63cf2bb2ec244dbe8c1bab10818f8a.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?df59c394b7b03d838e9c31b9e63b794f</span>
+                      <div class="item-header developer-name">Dingtone Team</div>
+                      <span class="app-name">Dingtone</span>
+                      <div class="item-footer description">Unlimited Credits &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/42646496c5055515ff0a5e3b6f16fd4f.png','Disney+','https://www.locked2.com/cl.php?id=a81aacc7ff4048e9b3f46f68d95a0faf')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/42646496c5055515ff0a5e3b6f16fd4f.png" data-src="https://gyazo.com/42646496c5055515ff0a5e3b6f16fd4f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked2.com/cl.php?id=a81aacc7ff4048e9b3f46f68d95a0faf</span>
+                      <div class="item-header developer-name">Free Disney Plus </div>
+                      <span class="app-name">Disney+ </span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/8c79daf2b2744bfdbb8ffe0b9260d1ea.png','Don't Starve: Pocket Edition','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/8c79daf2b2744bfdbb8ffe0b9260d1ea.png" data-src="https://gyazo.com/8c79daf2b2744bfdbb8ffe0b9260d1ea.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f0494227a2c7f7517353ca7f31861cd6</span>
+                      <div class="item-header developer-name">Don't Starve Team</div>
+                      <span class="app-name">Don't Starve: Pocket Edition</span>
+                      <div class="item-footer description">Free Download With Mods Included</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/795a13af8c2aac1bdc16550615a7a0a8.png','Dragons: Rise of Berk','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/795a13af8c2aac1bdc16550615a7a0a8.png" data-src="https://gyazo.com/795a13af8c2aac1bdc16550615a7a0a8.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?24431b5a3acfb59e824999090d443e18</span>
+                      <div class="item-header developer-name">Rise of Berk Team</div>
+                      <span class="app-name">Dragons: Rise of Berk</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/40ae1f05767b5f440f1ca96f1da3e7b0.png','Drift Max Pro','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/40ae1f05767b5f440f1ca96f1da3e7b0.png" data-src="https://gyazo.com/40ae1f05767b5f440f1ca96f1da3e7b0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?92d9a33b42a740b2bf5aaa234af77eee</span>
+                      <div class="item-header developer-name">Drift Max Pro Team</div>
+                      <span class="app-name">Drift Max Pro</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/f82929ae82d02c2e5318647a57286767.png','eFootball PES 2020','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/f82929ae82d02c2e5318647a57286767.png" data-src="https://gyazo.com/f82929ae82d02c2e5318647a57286767.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?fdd12f84bc69afbb4e92a4462ba7a8ee</span>
+                      <div class="item-header developer-name">PES Team</div>
+                      <span class="app-name">eFootball PES 2020</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/74bbdc0385a0b95860349b0828371953.png','Emoji Switcher','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/74bbdc0385a0b95860349b0828371953.png" data-src="https://gyazo.com/74bbdc0385a0b95860349b0828371953.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?aeb31a1f1bbf8ae5c7fb648df367733d</span>
+                      <div class="item-header developer-name">Emoji Switcher Team</div>
+                      <span class="app-name">Emoji Switcher </span>
+                      <div class="item-footer description">Get iOS Emojis </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/74dd053d9fdc4a612b3cbdca3d23d461.png','Enlight Pixaloop - Photo Animator','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/74dd053d9fdc4a612b3cbdca3d23d461.png" data-src="https://gyazo.com/74dd053d9fdc4a612b3cbdca3d23d461.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?78b67c257f98f57c7343b4134b15f8bd</span>
+                      <div class="item-header developer-name">Pixaloop Team</div>
+                      <span class="app-name">Enlight Pixaloop - Photo Animator &amp; Photo Editor</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e2b999236481551468e2b7009908081f.png','Episode - Choose Your Story','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e2b999236481551468e2b7009908081f.png" data-src="https://gyazo.com/e2b999236481551468e2b7009908081f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?b94e4246e86efda436c570933d786946</span>
+                      <div class="item-header developer-name">Episode Team</div>
+                      <span class="app-name">Episode - Choose Your Story</span>
+                      <div class="item-footer description">Free Passes &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/078afe9fe3a303f9084a3e8488dae82f.png','EvoCreo','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/078afe9fe3a303f9084a3e8488dae82f.png" data-src="https://gyazo.com/078afe9fe3a303f9084a3e8488dae82f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?06c84bb8a9f458aca051cc3528a10c46</span>
+                      <div class="item-header developer-name">EvoCreo Team</div>
+                      <span class="app-name">EvoCreo</span>
+                      <div class="item-footer description">Free Download with Mods!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e63040fced04896e044aeb541083c46b.png','Fallout Shelter','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e63040fced04896e044aeb541083c46b.png" data-src="https://gyazo.com/e63040fced04896e044aeb541083c46b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?6f0e6643f4c32d98950c3c7352037762</span>
+                      <div class="item-header developer-name">Fallout Team</div>
+                      <span class="app-name">Fallout Shelter</span>
+                      <div class="item-footer description">Unlimited Lunchboxes &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9dbc5ba9cf95c251aea41b8ab270dba3.png','Farming Simulator 20','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9dbc5ba9cf95c251aea41b8ab270dba3.png" data-src="https://gyazo.com/9dbc5ba9cf95c251aea41b8ab270dba3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?35fca4b6577505ac5cfc8f25aaa13bc4</span>
+                      <div class="item-header developer-name">Farming Simulator Team</div>
+                      <span class="app-name">Farming Simulator 20 </span>
+                      <div class="item-footer description">Free Download With Mods</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/4701f6ff6a8b0306ea28cc6f47b78549.png','FarmVille 2: Country Escape','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/4701f6ff6a8b0306ea28cc6f47b78549.png" data-src="https://gyazo.com/4701f6ff6a8b0306ea28cc6f47b78549.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?0a0e85ebed7d6aad8e9425087e43767d</span>
+                      <div class="item-header developer-name">Farmville Team</div>
+                      <span class="app-name">FarmVille 2: Country Escape</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/2d202ee37ead56833da35b8d2f2d20d3.png','FilzaEscaped','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/2d202ee37ead56833da35b8d2f2d20d3.png" data-src="https://gyazo.com/2d202ee37ead56833da35b8d2f2d20d3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a0c30eabfa16036e950de55b9cd924f0</span>
+                      <div class="item-header developer-name">Filza Team</div>
+                      <span class="app-name">FilzaEscaped</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/c4268ef55359ecbfa1b58623722ba9c9.png','Five Hoops - Basketball Game','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/c4268ef55359ecbfa1b58623722ba9c9.png" data-src="https://i.gyazo.com/c4268ef55359ecbfa1b58623722ba9c9.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a3013552155d7b296cabd9228b0c3818</span>
+                      <div class="item-header developer-name">Five Hoops Team</div>
+                      <span class="app-name">Five Hoops - Basketball Game</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/8fd9c8421f4cb935c39a920fb4b016c7.png','FlipaClip: Cartoon animation','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/8fd9c8421f4cb935c39a920fb4b016c7.png" data-src="https://gyazo.com/8fd9c8421f4cb935c39a920fb4b016c7.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8bf505495eaa7958529db7d0f7a9bbee</span>
+                      <div class="item-header developer-name">FlipClip Team </div>
+                      <span class="app-name">FlipaClip: Cartoon animation</span>
+                      <div class="item-footer description">FlipClip Free Premium &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a86ae2044da5327a16af14470962dc99.png','FollowGram','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a86ae2044da5327a16af14470962dc99.png" data-src="https://gyazo.com/a86ae2044da5327a16af14470962dc99.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?c76290cb68f73426d241160116a967a4</span>
+                      <div class="item-header developer-name">FollowGram Team</div>
+                      <span class="app-name">FollowGram</span>
+                      <div class="item-footer description">Auto Follow, Like &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a727487445fd2d93fbb2f5aeae457b20.png','Football Manager 2020 Mobile','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a727487445fd2d93fbb2f5aeae457b20.png" data-src="https://gyazo.com/a727487445fd2d93fbb2f5aeae457b20.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?b1f69bfe958d65e347fe05f731278045</span>
+                      <div class="item-header developer-name">SEGA</div>
+                      <span class="app-name">Football Manager 2020 Mobile</span>
+                      <div class="item-footer description">Free Download With Mods Included!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/0f184f3330610cedb8f34e8ecd16b556.png','Fortnite Injector','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/0f184f3330610cedb8f34e8ecd16b556.png" data-src="https://gyazo.com/0f184f3330610cedb8f34e8ecd16b556.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?484967dcfdf718d1b6aebc1913f3bd44</span>
+                      <div class="item-header developer-name">Fortnite Team</div>
+                      <span class="app-name">Fortnite Injector</span>
+                      <div class="item-footer description">Free Skins, Battle Pass &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/bfff090467ed54f8c3fb394e1ad0c9f4.png','Forza Horizon 4','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/bfff090467ed54f8c3fb394e1ad0c9f4.png" data-src="https://gyazo.com/bfff090467ed54f8c3fb394e1ad0c9f4.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?467f96c027b3507efb987aa0cc600003</span>
+                      <div class="item-header developer-name">Forza Team</div>
+                      <span class="app-name">Forza Horizon 4 </span>
+                      <div class="item-footer description">Mobile Download iOS &amp; Android</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/3a5e7593df036e363991a542aa448c97.png','Freecharge','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/3a5e7593df036e363991a542aa448c97.png" data-src="https://gyazo.com/3a5e7593df036e363991a542aa448c97.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?de4f5c3aaba905944350ff3779373783</span>
+                      <div class="item-header developer-name">Freecharge Team</div>
+                      <span class="app-name">Freecharge</span>
+                      <div class="item-footer description">Get a Free Credit Card</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/3eebc92cbb70d97c6838c8c5e5cf47a1.png','Funimate: Video Editor','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/3eebc92cbb70d97c6838c8c5e5cf47a1.png" data-src="https://gyazo.com/3eebc92cbb70d97c6838c8c5e5cf47a1.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?41b509ce98283ebc8d9671126dd7aee4</span>
+                      <div class="item-header developer-name">Funimate Team</div>
+                      <span class="app-name">Funimate: Video Editor</span>
+                      <div class="item-footer description">Funimate Pro Free </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/8621b422767a7dd5b075e9d6197e8cc0.png','Game Controller Bluetooth','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/8621b422767a7dd5b075e9d6197e8cc0.png" data-src="https://gyazo.com/8621b422767a7dd5b075e9d6197e8cc0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f7004617f266a4d7b24b1fd8aeb10c8d</span>
+                      <div class="item-header developer-name">Injectionz</div>
+                      <span class="app-name">Game Controller Bluetooth</span>
+                      <div class="item-footer description">Connect Your Controller to Mobile</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/990027ca6a67b870caf237b0327f669e.png','Geometry Dash','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/990027ca6a67b870caf237b0327f669e.png" data-src="https://gyazo.com/990027ca6a67b870caf237b0327f669e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?879815ab3b148fac89c27504cf4c43bc</span>
+                      <div class="item-header developer-name">Geometry Dash Team</div>
+                      <span class="app-name">Geometry Dash</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/61e393c4ecd157a53e24447f3bdd662f.png','Gmail','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/61e393c4ecd157a53e24447f3bdd662f.png" data-src="https://gyazo.com/61e393c4ecd157a53e24447f3bdd662f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f3017843f16af7e90bc7b6e79509a769</span>
+                      <div class="item-header developer-name">Gmail Team</div>
+                      <span class="app-name">Gmail</span>
+                      <div class="item-footer description">Dark Mode &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/766a8b0528caa85fab344af6e90f7e8a.png','GTA 4','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/766a8b0528caa85fab344af6e90f7e8a.png" data-src="https://gyazo.com/766a8b0528caa85fab344af6e90f7e8a.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?28fc8d5b166d22beb231addc6a54e573</span>
+                      <div class="item-header developer-name">GTA Team</div>
+                      <span class="app-name">GTA 4</span>
+                      <div class="item-footer description">No Jailbreak or Root Required </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/bd9ef78469a9a5cfb2a7c85488eee91e.png','Halo: The Master Chief Collection','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/bd9ef78469a9a5cfb2a7c85488eee91e.png" data-src="https://gyazo.com/bd9ef78469a9a5cfb2a7c85488eee91e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?6888d4d691babe521a4747b2d463fca3</span>
+                      <div class="item-header developer-name">Halo Team</div>
+                      <span class="app-name">Halo: The Master Chief Collection</span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/8520ec28d7c49049003cfee85bf3bb4f.png','Homescapes','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/8520ec28d7c49049003cfee85bf3bb4f.png" data-src="https://gyazo.com/8520ec28d7c49049003cfee85bf3bb4f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?e6d0b405b89e9fdc8e7b5cde19e7cc64</span>
+                      <div class="item-header developer-name">Homescapes Team</div>
+                      <span class="app-name">Homescapes</span>
+                      <div class="item-footer description">Unlimited Lives, Stars &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9c13d9488ec44c444d40fa60ad04b9df.png','Hooked Inc: Fisher Tycoon','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9c13d9488ec44c444d40fa60ad04b9df.png" data-src="https://gyazo.com/9c13d9488ec44c444d40fa60ad04b9df.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?18556b0ff33e1b17d809f2585c0892b1</span>
+                      <div class="item-header developer-name">Hooked Inc Team</div>
+                      <span class="app-name">Hooked Inc: Fisher Tycoon</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/25327a3dd530136a93081ef42bb655aa.png','Hungry Shark Evolution','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/25327a3dd530136a93081ef42bb655aa.png" data-src="https://gyazo.com/25327a3dd530136a93081ef42bb655aa.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?78cf4eef6f8bdb4968d64c9f78d85ec3</span>
+                      <div class="item-header developer-name">Hungry Shark Evolution Team</div>
+                      <span class="app-name">Hungry Shark Evolution</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/42128ab123101a6341aa357d40034738.png','IMVU: 3D Avatar','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/42128ab123101a6341aa357d40034738.png" data-src="https://gyazo.com/42128ab123101a6341aa357d40034738.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?923b19fa3389be77d7eeea01c72738d7</span>
+                      <div class="item-header developer-name">IMVU Team </div>
+                      <span class="app-name">IMVU: 3D Avatar</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/53941ff15a49ed0e3a1e1a557ffcb05e.png','Injustice: Gods Among Us','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/53941ff15a49ed0e3a1e1a557ffcb05e.png" data-src="https://gyazo.com/53941ff15a49ed0e3a1e1a557ffcb05e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?40dd93182797970056c5f6f815c8dfe4</span>
+                      <div class="item-header developer-name">Injustice Team</div>
+                      <span class="app-name">Injustice: Gods Among Us</span>
+                      <div class="item-footer description">Unlimited Coins &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/6499bc93958f5a67b22f76501e7f44e8.png','Ink Inc. - Tattoo Drawing','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/6499bc93958f5a67b22f76501e7f44e8.png" data-src="https://gyazo.com/6499bc93958f5a67b22f76501e7f44e8.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?83b2a2a32fc023ef643cc93504327f69</span>
+                      <div class="item-header developer-name">Ink Inc Team</div>
+                      <span class="app-name">Ink Inc. - Tattoo Drawing</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/677844fbeb3057e3f2d8239280030915.png','Rhino','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/677844fbeb3057e3f2d8239280030915.png" data-src="https://gyazo.com/677844fbeb3057e3f2d8239280030915.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8a6cd588b19aff14e5fe3c012ab63958</span>
+                      <div class="item-header developer-name">Rhino Team</div>
+                      <span class="app-name">Rhino</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/39264ed743a0a8483ef4dbaab71ddfae.png','Instagram','https://www.clickfam.com/cl.php?id=082006ea02e42258dc8b26d0dc034aca')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/39264ed743a0a8483ef4dbaab71ddfae.png" data-src="https://gyazo.com/39264ed743a0a8483ef4dbaab71ddfae.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.clickfam.com/cl.php?id=082006ea02e42258dc8b26d0dc034aca</span>
+                      <div class="item-header developer-name">View Private Profiles | Injection</div>
+                      <span class="app-name">Instagram ++</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/678f1d32e935717f17dae99699e85635.png','Jurassic Survival','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/678f1d32e935717f17dae99699e85635.png" data-src="https://gyazo.com/678f1d32e935717f17dae99699e85635.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?de8d48d3e474ddca4840986f0fb90ac9</span>
+                      <div class="item-header developer-name">Jurassic Survival Team</div>
+                      <span class="app-name">Jurassic Survival </span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/ce99d022b7d0edd30c3b5562df094ee0.png','Jurassic World Evolution','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/ce99d022b7d0edd30c3b5562df094ee0.png" data-src="https://gyazo.com/ce99d022b7d0edd30c3b5562df094ee0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8240346606f99ad741c519c1aaa2945d</span>
+                      <div class="item-header developer-name">Jurassic World Team</div>
+                      <span class="app-name">Jurassic World Evolution </span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/4685a9cc242c2443956036955f65be58.png','Jurassic World: The Game','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/4685a9cc242c2443956036955f65be58.png" data-src="https://gyazo.com/4685a9cc242c2443956036955f65be58.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?572baa329d8fab8c7fb97b2aa56e9f83</span>
+                      <div class="item-header developer-name">Jurassic World Team</div>
+                      <span class="app-name">Jurassic World: The Game</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/30a35b40c539f7aecec6de53258a189b.png','Kahoot! Hack','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/30a35b40c539f7aecec6de53258a189b.png" data-src="https://gyazo.com/30a35b40c539f7aecec6de53258a189b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?7927c70abbf713f2cf70bb57330e2e85</span>
+                      <div class="item-header developer-name">Kahoot Team</div>
+                      <span class="app-name">Kahoot! Hack </span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5f5761579ea8facb8ded75d4540d39eb.png','Kaspersky Battery Life','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5f5761579ea8facb8ded75d4540d39eb.png" data-src="https://gyazo.com/5f5761579ea8facb8ded75d4540d39eb.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?9943eabeee22ccc5a1a782d96454da6a</span>
+                      <div class="item-header developer-name">Kaspersky Team</div>
+                      <span class="app-name">Kaspersky Battery Life</span>
+                      <div class="item-footer description">Battery Life Saver</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5af000e090d1262fb6181cb2dc5b2f55.png','Kick the Buddy','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5af000e090d1262fb6181cb2dc5b2f55.png" data-src="https://gyazo.com/5af000e090d1262fb6181cb2dc5b2f55.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?622c83f49459d3c716cccd33eca78153</span>
+                      <div class="item-header developer-name">Kick the Buddy Team</div>
+                      <span class="app-name">Kick the Buddy</span>
+                      <div class="item-footer description">Unlimited Money &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/0d07264072d89567ecfec4944903eca4.png','KineMaster - Video Editor','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/0d07264072d89567ecfec4944903eca4.png" data-src="https://gyazo.com/0d07264072d89567ecfec4944903eca4.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?b7ee611a72a6f3cfb097dbf3790f7484</span>
+                      <div class="item-header developer-name">Kinemaster Team</div>
+                      <span class="app-name">KineMaster - Video Editor</span>
+                      <div class="item-footer description">Pro Full Version Free &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/cbac58aaca0345e215cc687cf90e18a5.png','kirakira+','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/cbac58aaca0345e215cc687cf90e18a5.png" data-src="https://gyazo.com/cbac58aaca0345e215cc687cf90e18a5.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?9990cfecce69a5c82aef36e3884425f6</span>
+                      <div class="item-header developer-name">kirakira Team</div>
+                      <span class="app-name">kirakira+</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a25e9bb608748ba1b1437d669a45e11f.png','Last Day on Earth: Survival','https://www.locked3.com/cl.php?id=0106d00cbec177fe5722976f7ebc18bf')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a25e9bb608748ba1b1437d669a45e11f.png" data-src="https://gyazo.com/a25e9bb608748ba1b1437d669a45e11f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked3.com/cl.php?id=0106d00cbec177fe5722976f7ebc18bf</span>
+                      <div class="item-header developer-name">Unlimited Coins</div>
+                      <span class="app-name">Last Day on Earth: Survival</span>
+                      <div class="item-footer description">No Jailbreak or Root Required </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/ae54deefc71a1a3edc6b84aa0c5acdf3.png','LifeAfter','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/ae54deefc71a1a3edc6b84aa0c5acdf3.png" data-src="https://gyazo.com/ae54deefc71a1a3edc6b84aa0c5acdf3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?169ae6086dadca45167b5380fa57113f</span>
+                      <div class="item-header developer-name">Life After Team</div>
+                      <span class="app-name">LifeAfter </span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/8033cbdad6ae27c1751faab068c3a113.png','Live Sports HD','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/8033cbdad6ae27c1751faab068c3a113.png" data-src="https://gyazo.com/8033cbdad6ae27c1751faab068c3a113.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?5f95c888115ac2cc3e73c98fc68060f3</span>
+                      <div class="item-header developer-name">Live Sports Team</div>
+                      <span class="app-name">Live Sports HD</span>
+                      <div class="item-footer description">Stream Live Sports for Free</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/6b938d04bf2c9a3065670323f96f895b.png','LiveMe++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/6b938d04bf2c9a3065670323f96f895b.png" data-src="https://gyazo.com/6b938d04bf2c9a3065670323f96f895b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?fecf34daf69d479242cb587aa8a545e4</span>
+                      <div class="item-header developer-name">LiveMe Team</div>
+                      <span class="app-name">LiveMe++</span>
+                      <div class="item-footer description">Unlimited Coins &amp; Diamonds</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/dac14976a015a306a1e3e3f4a30c44d9.png','Lockdown Apps','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/dac14976a015a306a1e3e3f4a30c44d9.png" data-src="https://gyazo.com/dac14976a015a306a1e3e3f4a30c44d9.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?354bd2cafd6fb06e1d4b25e6b481c9b5</span>
+                      <div class="item-header developer-name">Lockdown Team</div>
+                      <span class="app-name">Lockdown Apps </span>
+                      <div class="item-footer description">Fix Revoked Apps </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5144faef69d2df997202f0134748f723.png','MagicFox-Auto Clicker','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5144faef69d2df997202f0134748f723.png" data-src="https://gyazo.com/5144faef69d2df997202f0134748f723.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?f0fc4a2f676b9e9b326c5b224023870d</span>
+                      <div class="item-header developer-name">MagicFox Team</div>
+                      <span class="app-name">MagicFox-Auto Clicker </span>
+                      <div class="item-footer description">iOS &amp; Android Auto Clicker</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/32df518527a8f392932da9c4bca75f87.png','Mario Kart Tour','https://www.verifyzone.net/cl.php?id=d57d04e026ec0554d2ed08969cfd3f14')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/32df518527a8f392932da9c4bca75f87.png" data-src="https://gyazo.com/32df518527a8f392932da9c4bca75f87.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.verifyzone.net/cl.php?id=d57d04e026ec0554d2ed08969cfd3f14</span>
+                      <div class="item-header developer-name">Mario Team</div>
+                      <span class="app-name">Mario Kart Tour </span>
+                      <div class="item-footer description">Unlimited Rubies &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/72938a1eb9a8eb151928ae7acc992ab5.png','Mediabox HD','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/72938a1eb9a8eb151928ae7acc992ab5.png" data-src="https://gyazo.com/72938a1eb9a8eb151928ae7acc992ab5.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?cd45315c5a87f263c464230aa7eed1bc</span>
+                      <div class="item-header developer-name">Mediabox Team</div>
+                      <span class="app-name">Mediabox HD </span>
+                      <div class="item-footer description">Watch Free Movies &amp; TV Shows!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/3bd57588fbd403c30672fb60048d53d3.png','Messenger','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/3bd57588fbd403c30672fb60048d53d3.png" data-src="https://gyazo.com/3bd57588fbd403c30672fb60048d53d3.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?1e515dc4edbad4c68f0248700b84a3c8</span>
+                      <div class="item-header developer-name">Messenger Team</div>
+                      <span class="app-name">Messenger</span>
+                      <div class="item-footer description">No Jailbreak or Root Required </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/bef3469de178ecf8dee47635842ea393.png','Minecraft','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/bef3469de178ecf8dee47635842ea393.png" data-src="https://i.gyazo.com/bef3469de178ecf8dee47635842ea393.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?08d86e9df6f4c5dea77ab2bd64b727d1</span>
+                      <div class="item-header developer-name">Minecraft Team</div>
+                      <span class="app-name">Minecraft</span>
+                      <div class="item-footer description">Free Download &amp; Mods</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/3f04444b6f209b81df6e626f2bbb8e89.png','Minecraft Earth','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/3f04444b6f209b81df6e626f2bbb8e89.png" data-src="https://gyazo.com/3f04444b6f209b81df6e626f2bbb8e89.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?bc4ab665e1cc7b696c05efc0c37eb1d0</span>
+                      <div class="item-header developer-name">Minecraft Earth Team</div>
+                      <span class="app-name">Minecraft Earth</span>
+                      <div class="item-footer description">Spoofer, Unlimited Rubies &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/6bdceb144bec8dcfa18c8a1c42c2f6df.png','My Cafe','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/6bdceb144bec8dcfa18c8a1c42c2f6df.png" data-src="https://gyazo.com/6bdceb144bec8dcfa18c8a1c42c2f6df.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?1e47161d6b010e5b828a6968c7c715a1</span>
+                      <div class="item-header developer-name">My Cafe Team</div>
+                      <span class="app-name">My Cafe</span>
+                      <div class="item-footer description">Unlimited Money &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/AYh6EgF.jpg','Netflix','https://www.locked1.com/cl.php?id=adddde2638633325ea7212a161568a7e')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/AYh6EgF.jpg" data-src="https://i.imgur.com/AYh6EgF.jpg" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked1.com/cl.php?id=adddde2638633325ea7212a161568a7e</span>
+                      <div class="item-header developer-name">Netflix Premium Inject</div>
+                      <span class="app-name">Netflix</span>
+                      <div class="item-footer description">No Jailbreak Or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/f28e0f0b803e143766838792fb86a2f8.png','NBA League Pass','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/f28e0f0b803e143766838792fb86a2f8.png" data-src="https://gyazo.com/f28e0f0b803e143766838792fb86a2f8.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?ace8df6053b185addb6245837d410a1b</span>
+                      <div class="item-header developer-name">NBA</div>
+                      <span class="app-name">NBA League Pass </span>
+                      <div class="item-footer description">Free NBA League Pass</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a9a06d522d0e5c3afe1f7fddc3863758.png','Need for Speed Most Wanted','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a9a06d522d0e5c3afe1f7fddc3863758.png" data-src="https://gyazo.com/a9a06d522d0e5c3afe1f7fddc3863758.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?2a7701ba3cc568b9e2fcc1236117bcbb</span>
+                      <div class="item-header developer-name">Need for Speed Team </div>
+                      <span class="app-name">Need for Speed Most Wanted</span>
+                      <div class="item-footer description">Free Download with Mods Included</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9d809de6ce6c107f93ad13c449c6b9aa.png','NordVPN: Best VPN Fast, Secure','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9d809de6ce6c107f93ad13c449c6b9aa.png" data-src="https://gyazo.com/9d809de6ce6c107f93ad13c449c6b9aa.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?3fb534f9adef9a9b12da7a07eeae77a2</span>
+                      <div class="item-header developer-name">NordVPN Team</div>
+                      <span class="app-name">NordVPN: Best VPN Fast, Secure &amp; Unlimited</span>
+                      <div class="item-footer description">Unlimited Usage for Free</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/656b4b386fea4b77814f66b06388f904.png','Norton Antivirus','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/656b4b386fea4b77814f66b06388f904.png" data-src="https://gyazo.com/656b4b386fea4b77814f66b06388f904.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?694d26e6de390d60b29582c778911ad6</span>
+                      <div class="item-header developer-name">Norton Team</div>
+                      <span class="app-name">Norton Antivirus</span>
+                      <div class="item-footer description">Free Antivirus App </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/f1a1ee551fc7a7dff7cfe3522e0a3295.png','Off The Road - OTR','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/f1a1ee551fc7a7dff7cfe3522e0a3295.png" data-src="https://gyazo.com/f1a1ee551fc7a7dff7cfe3522e0a3295.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?728166f16497778fe2e618abadf0c470</span>
+                      <div class="item-header developer-name">Off The Road Team</div>
+                      <span class="app-name">Off The Road - OTR</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/06fee459c267f19d74a46baf991ed62c.png','Omegle','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/06fee459c267f19d74a46baf991ed62c.png" data-src="https://gyazo.com/06fee459c267f19d74a46baf991ed62c.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?0d5b9b7b4cd0e3c3c31256c2e62ddf19</span>
+                      <div class="item-header developer-name">Omegle Team</div>
+                      <span class="app-name">Omegle </span>
+                      <div class="item-footer description">Mobile Download</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/gCXlNuS.jpg','Panda Helper','https://www.locked4.com/cl.php?id=99611fb649e1efc81dce39369d3d8710')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/gCXlNuS.jpg" data-src="https://i.imgur.com/gCXlNuS.jpg" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked4.com/cl.php?id=99611fb649e1efc81dce39369d3d8710</span>
+                      <div class="item-header developer-name">Panda Helper Download</div>
+                      <span class="app-name">Panda Helper</span>
+                      <div class="item-footer description">Android &amp; iOS</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/bxL7cgd.png','Pixel Gun 3D','https://www.verifyspot.net/cl.php?id=ffeef7e5765c9c4aaa046e23484c7b07')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/bxL7cgd.png" data-src="https://i.imgur.com/bxL7cgd.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.verifyspot.net/cl.php?id=ffeef7e5765c9c4aaa046e23484c7b07</span>
+                      <div class="item-header developer-name">Pixelings Team Injector</div>
+                      <span class="app-name">Pixel Gun 3D</span>
+                      <div class="item-footer description">Free Gems &amp; Coins</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/dce0a292dd141a483cbda1e47e5b7a8e.png','Planet Zoo Mobile','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/dce0a292dd141a483cbda1e47e5b7a8e.png" data-src="https://gyazo.com/dce0a292dd141a483cbda1e47e5b7a8e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?389f28eb895cf1f32fe456fe8b16e5a6</span>
+                      <div class="item-header developer-name">Planet Zoo Team</div>
+                      <span class="app-name">Planet Zoo Mobile</span>
+                      <div class="item-footer description">Full Download No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b555c7357445bf209e34af80ff8aaa72.png','PlayerXtreme Media Player','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b555c7357445bf209e34af80ff8aaa72.png" data-src="https://gyazo.com/b555c7357445bf209e34af80ff8aaa72.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?3959181ed579a0947fdee85ba21a951c</span>
+                      <div class="item-header developer-name">PlayerXtreme Team</div>
+                      <span class="app-name">PlayerXtreme Media Player</span>
+                      <div class="item-footer description">Make Phone Speakers Louder</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/01c8ad27535254df52bf44d98ba60c4b.png','Police Stories','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/01c8ad27535254df52bf44d98ba60c4b.png" data-src="https://gyazo.com/01c8ad27535254df52bf44d98ba60c4b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?08cbb4d14234c6b08944ae2e49bdf50b</span>
+                      <div class="item-header developer-name">Police Stories Team</div>
+                      <span class="app-name">Police Stories </span>
+                      <div class="item-footer description">Free Download </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/9550e897827c5caba0eb60a51e688fd6.png','Poopdie','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/9550e897827c5caba0eb60a51e688fd6.png" data-src="https://gyazo.com/9550e897827c5caba0eb60a51e688fd6.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?dd470e31297c0d9e09087f9127f611d0</span>
+                      <div class="item-header developer-name">Poopdie Team</div>
+                      <span class="app-name">Poopdie</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+            <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/raid.png','Raid Shadow Legends','https://www.locked2.com/cl.php?id=c5d30f24a4fc8d09ac03f10f239e1b51')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/raid.png" data-src="./SSMSky_files/raid.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked2.com/cl.php?id=c5d30f24a4fc8d09ac03f10f239e1b51</span>
+                      <div class="item-header developer-name">R6 Team </div>
+                      <span class="app-name">Raid Shadow Legends</span>
+                      <div class="item-footer description">Unlimited Diamonds & Silver</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/534a7a8c30f1be482d90489387003236.png','Rainbow Six Siege','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/534a7a8c30f1be482d90489387003236.png" data-src="https://gyazo.com/534a7a8c30f1be482d90489387003236.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?9e35d90537169c1015d5cc2e87871beb</span>
+                      <div class="item-header developer-name">R6 Team </div>
+                      <span class="app-name">Rainbow Six Siege </span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d8b1c8cfad9fba7f7a81f501d95a34df.png','Real Car Parking 2','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d8b1c8cfad9fba7f7a81f501d95a34df.png" data-src="https://gyazo.com/d8b1c8cfad9fba7f7a81f501d95a34df.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?16a0bc5f8b6051c62276132faccd24ef</span>
+                      <div class="item-header developer-name">Real Car Parking 2 Team </div>
+                      <span class="app-name">Real Car Parking 2</span>
+                      <div class="item-footer description">No Jailbreak or Root Required </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/fbe3077a9838a5529660f8f194b81f1f.png','Record it! :: Screen Recorder','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/fbe3077a9838a5529660f8f194b81f1f.png" data-src="https://gyazo.com/fbe3077a9838a5529660f8f194b81f1f.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?ade520fa11c2f1669e691dfa14693068</span>
+                      <div class="item-header developer-name">Record it Team</div>
+                      <span class="app-name">Record it! :: Screen Recorder</span>
+                      <div class="item-footer description">Screen Recorder for iOS &amp; Android</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/65a9bc279761aee168bf0178175179c4.png','Red Dead Redemption 2','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/65a9bc279761aee168bf0178175179c4.png" data-src="https://gyazo.com/65a9bc279761aee168bf0178175179c4.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?09056a5b7bccc669320e452ff9314afa</span>
+                      <div class="item-header developer-name">RDR2 Team</div>
+                      <span class="app-name">Red Dead Redemption 2</span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/01d4400425dd8d6f94da9d1599240f0c.png','Respawnables','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/01d4400425dd8d6f94da9d1599240f0c.png" data-src="https://gyazo.com/01d4400425dd8d6f94da9d1599240f0c.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8a514cea9dd1ca4e06f1ccbcf57617ff</span>
+                      <div class="item-header developer-name">Respawnables Team</div>
+                      <span class="app-name">Respawnables</span>
+                      <div class="item-footer description">Unlimited Money &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d63d533d5291a85d892a73e855470378.png','Romance Club - Stories I Play','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d63d533d5291a85d892a73e855470378.png" data-src="https://gyazo.com/d63d533d5291a85d892a73e855470378.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?fbc0ea63ee4e87db6e9f7d6c9c4a4275</span>
+                      <div class="item-header developer-name">Romance Club Team</div>
+                      <span class="app-name">Romance Club - Stories I Play</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/43f28377aae37995af8ccc19742b37e1.png','Rust','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/43f28377aae37995af8ccc19742b37e1.png" data-src="https://gyazo.com/43f28377aae37995af8ccc19742b37e1.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?14a942eadb71db1e573219de72259a34</span>
+                      <div class="item-header developer-name">Rust Team</div>
+                      <span class="app-name">Rust</span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d9dd34f60cd54638cc0e00404b1199ac.png','Saint Seiya : Awakening','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d9dd34f60cd54638cc0e00404b1199ac.png" data-src="https://i.gyazo.com/d9dd34f60cd54638cc0e00404b1199ac.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?667af17e5f1bfe7cf6e0ceec1b638441</span>
+                      <div class="item-header developer-name">Saint Seiya : Awakening Team</div>
+                      <span class="app-name">Saint Seiya : Awakening</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5b0dbe45054d5f7451d953c4b83398bb.png','Secret Neighbor','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5b0dbe45054d5f7451d953c4b83398bb.png" data-src="https://gyazo.com/5b0dbe45054d5f7451d953c4b83398bb.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?73e9087911159f255623da93def9f598</span>
+                      <div class="item-header developer-name">Secret Neighbor Team</div>
+                      <span class="app-name">Secret Neighbor</span>
+                      <div class="item-footer description">Get it on Mobile</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/7e8330493ccaa7061d4ac14df6282daa.png','SimCity BuildIt','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/7e8330493ccaa7061d4ac14df6282daa.png" data-src="https://gyazo.com/7e8330493ccaa7061d4ac14df6282daa.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?e565da49b3fb6a9ee8047a925ad80db1</span>
+                      <div class="item-header developer-name">SimCity Team</div>
+                      <span class="app-name">SimCity BuildIt</span>
+                      <div class="item-footer description">Unlimited Money &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/ad93c5a5d962860f25f04e36b56c7538.png','Snapchat++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/ad93c5a5d962860f25f04e36b56c7538.png" data-src="https://gyazo.com/ad93c5a5d962860f25f04e36b56c7538.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?6bcf5c9355eb4c68f0d89def8374ee2f</span>
+                      <div class="item-header developer-name">Snapchat Team</div>
+                      <span class="app-name">Snapchat++</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/22695997ecc87bc5e5420b1f2a2281f4.png','Spotify ++','https://www.clickfam.com/cl.php?id=35a4de40e4e821c449de26cb17664664')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/22695997ecc87bc5e5420b1f2a2281f4.png" data-src="https://gyazo.com/22695997ecc87bc5e5420b1f2a2281f4.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.clickfam.com/cl.php?id=35a4de40e4e821c449de26cb17664664</span>
+                      <div class="item-header developer-name">Spotify Inject</div>
+                      <span class="app-name">Spotify ++</span>
+                      <div class="item-footer description">Free Spotify Premium </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/d02f3430f90af6737785de0adb05856d.png','Steam++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/d02f3430f90af6737785de0adb05856d.png" data-src="https://gyazo.com/d02f3430f90af6737785de0adb05856d.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?3abb95af942e164d9363b039a8da5fe6</span>
+                      <div class="item-header developer-name">Steam Team</div>
+                      <span class="app-name">Steam++ </span>
+                      <div class="item-footer description">Free Steam Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/5HFmQhS.png','ShowBox','https://www.locked3.com/cl.php?id=7981a3014f28559fbc010eeb788d6010')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/5HFmQhS.png" data-src="https://i.imgur.com/5HFmQhS.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked3.com/cl.php?id=7981a3014f28559fbc010eeb788d6010</span>
+                      <div class="item-header developer-name">iOS and Android ShowBox Injector</div>
+                      <span class="app-name">ShowBox</span>
+                      <div class="item-footer description">Watch / Download TV Shows On Your Smartphone</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div> 
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/e471e065f711662a78029d702551784b.png','Stump Me!','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/e471e065f711662a78029d702551784b.png" data-src="https://gyazo.com/e471e065f711662a78029d702551784b.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?038c527f614e0ac97439ba7dd4e98dcb</span>
+                      <div class="item-header developer-name">Stump Me Team</div>
+                      <span class="app-name">Stump Me!</span>
+                      <div class="item-footer description">All Solutions </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/4fe2901feb19fe525bd34c646ae4189d.png','Swift WiFi','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/4fe2901feb19fe525bd34c646ae4189d.png" data-src="https://gyazo.com/4fe2901feb19fe525bd34c646ae4189d.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?aa0dcaceaeba8dae014be18ce1ef01a1</span>
+                      <div class="item-header developer-name">Swift Team</div>
+                      <span class="app-name">Swift WiFi</span>
+                      <div class="item-footer description">Get Free WiFi Anywhere!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/301cab404d915c2b13d63912a499720a.png','Sword Art Online Alicization Rising Steel','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/301cab404d915c2b13d63912a499720a.png" data-src="https://gyazo.com/301cab404d915c2b13d63912a499720a.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?edde76213d2ba2ccdaa6d138efb05610</span>
+                      <div class="item-header developer-name">BANDAI NAMCO</div>
+                      <span class="app-name">Sword Art Online Alicization Rising Steel</span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/88e7373323a38d6217ee6ac88774e313.png','Tank Stars','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/88e7373323a38d6217ee6ac88774e313.png" data-src="https://gyazo.com/88e7373323a38d6217ee6ac88774e313.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?91da48b89bb436addbd952dc8dffd0a1</span>
+                      <div class="item-header developer-name">Tank Stars Team </div>
+                      <span class="app-name">Tank Stars</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/6a95c8719cc772a1517de140bf7522b7.png','Teamfight Tactics','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/6a95c8719cc772a1517de140bf7522b7.png" data-src="https://gyazo.com/6a95c8719cc772a1517de140bf7522b7.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?0c7efe4e38d07c03a1b4876838592c56</span>
+                      <div class="item-header developer-name">Teamfight Team</div>
+                      <span class="app-name">Teamfight Tactics</span>
+                      <div class="item-footer description">Free Download for All Platforms</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/77a03df72bc9e81ca0c87ddc6fda6c99.png','Tennis Clash: 3D Sports','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/77a03df72bc9e81ca0c87ddc6fda6c99.png" data-src="https://gyazo.com/77a03df72bc9e81ca0c87ddc6fda6c99.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?773e8654e6f279e084f5303221feb4f7</span>
+                      <div class="item-header developer-name">Tennis Clash Team</div>
+                      <span class="app-name">Tennis Clash: 3D Sports</span>
+                      <div class="item-footer description">Unlimited Gems &amp; More</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b1b23143dd2c144a4f761cfe85a810b9.png','Textnow++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b1b23143dd2c144a4f761cfe85a810b9.png" data-src="https://gyazo.com/b1b23143dd2c144a4f761cfe85a810b9.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?51a3215c53404e3524e62fa75f747bbf</span>
+                      <div class="item-header developer-name">Textnow Team</div>
+                      <span class="app-name">Textnow++ </span>
+                      <div class="item-footer description">Get a Free Phone Number</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/5ea8fb46d6a3e27046f9ff451f27cc5d.png','TikTok','https://www.locked4.com/cl.php?id=2468d35fbe0634a63cf3c3c2a9bf5097')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/5ea8fb46d6a3e27046f9ff451f27cc5d.png" data-src="https://gyazo.com/5ea8fb46d6a3e27046f9ff451f27cc5d.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked4.com/cl.php?id=2468d35fbe0634a63cf3c3c2a9bf5097</span>
+                      <div class="item-header developer-name">View Private Profiles | Inject</div>
+                      <span class="app-name">TikTok++</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+              
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/WcgEC9D.jpg','TikTok','https://www.locked2.com/cl.php?id=cb8a5a42a7af4dae1e31c956c8c8cc65')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/WcgEC9D.jpg" data-src="https://i.imgur.com/WcgEC9D.jpg" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked2.com/cl.php?id=cb8a5a42a7af4dae1e31c956c8c8cc65</span>
+                      <div class="item-header developer-name">10 000 Real Followers</div>
+                      <span class="app-name">TikTok</span>
+                      <div class="item-footer description">Free Fans Injector</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/NEeh0Pi.png','Tinder Gold','https://www.locked4.com/cl.php?id=c916ac8985eb6c004794df7fff63a12d')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/NEeh0Pi.png" data-src="https://i.imgur.com/NEeh0Pi.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.locked4.com/cl.php?id=c916ac8985eb6c004794df7fff63a12d</span>
+                      <div class="item-header developer-name">Android &amp; iOS</div>
+                      <span class="app-name">Tinder Gold</span>
+                      <div class="item-footer description">Tinder Gold Inject</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/7a91bc21e155603a4eee777f71e2cf73.png','Twitch++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/7a91bc21e155603a4eee777f71e2cf73.png" data-src="https://gyazo.com/7a91bc21e155603a4eee777f71e2cf73.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?8d5933c3f15abeee5d34936b99d6f1c3</span>
+                      <div class="item-header developer-name">Twitch Team </div>
+                      <span class="app-name">Twitch++ </span>
+                      <div class="item-footer description">Free Twitch Prime &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/ccc5caad5fc1786a7093ce22808e9860.png','Twitter++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/ccc5caad5fc1786a7093ce22808e9860.png" data-src="https://gyazo.com/ccc5caad5fc1786a7093ce22808e9860.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?c07b295f5911db76c5745a8f212881d7</span>
+                      <div class="item-header developer-name">Twitter Team</div>
+                      <span class="app-name">Twitter++ </span>
+                      <div class="item-footer description">Get Verified, Download Videos &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/69cfdd55b16ca4ba48f78170158f6f1e.png','Utopia: Origin','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/69cfdd55b16ca4ba48f78170158f6f1e.png" data-src="https://gyazo.com/69cfdd55b16ca4ba48f78170158f6f1e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?40e9fffd1561e701a15c4d4c8ccea2ed</span>
+                      <div class="item-header developer-name">Utopia Team</div>
+                      <span class="app-name">Utopia: Origin</span>
+                      <div class="item-footer description">Unlimited Money &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/16df73b1cf855fc601ba8325be1b1002.png','VBooter','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/16df73b1cf855fc601ba8325be1b1002.png" data-src="https://i.gyazo.com/16df73b1cf855fc601ba8325be1b1002.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?18a92c0ff189ed7990503cf905da8db6</span>
+                      <div class="item-header developer-name">VBooter Team</div>
+                      <span class="app-name">VBooter </span>
+                      <div class="item-footer description">No Jailbreak or Root Required</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/81f9a72a3768a7c2aac91c523e8fc5a2.png','Video Star','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/81f9a72a3768a7c2aac91c523e8fc5a2.png" data-src="https://gyazo.com/81f9a72a3768a7c2aac91c523e8fc5a2.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?5d679b7654797d141df39525bb3b985e</span>
+                      <div class="item-header developer-name">Video Star Team </div>
+                      <span class="app-name">Video Star</span>
+                      <div class="item-footer description">Free Transitions, Effects &amp; More! </div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/b4dd1a530dc72c9eecc0b51477315e3e.png','Whatsapp++','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/b4dd1a530dc72c9eecc0b51477315e3e.png" data-src="https://gyazo.com/b4dd1a530dc72c9eecc0b51477315e3e.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?4609bdfb81f9840f14ddf2189c4fa147</span>
+                      <div class="item-header developer-name">Whatsapp Team</div>
+                      <span class="app-name">Whatsapp++ </span>
+                      <div class="item-footer description">Dark Mode &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/a7d000ec128e6ea022086506dbd91bdd.png','Xbox Live','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/a7d000ec128e6ea022086506dbd91bdd.png" data-src="https://gyazo.com/a7d000ec128e6ea022086506dbd91bdd.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?a343af7ee070ce96ac9e5e9218c3a178</span>
+                      <div class="item-header developer-name">Xbox Team</div>
+                      <span class="app-name">Xbox Live </span>
+                      <div class="item-footer description">Free Xbox Live &amp; More!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('../i.imgur.com/8eoQRwy.png','YouTube','https://www.clickfam.com/cl.php?id=8f6f3610d2a8aa59b35150e5f9b7cfcf')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="../i.imgur.com/8eoQRwy.png" data-src="https://i.imgur.com/8eoQRwy.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://www.clickfam.com/cl.php?id=8f6f3610d2a8aa59b35150e5f9b7cfcf</span>
+                      <div class="item-header developer-name">YouTube Premium Inject</div>
+                      <span class="app-name">YouTube</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/917421c6b1ac463eeea8bd4c73178e2d.png','Yu-Gi-Oh! Legacy of the Duelist','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/917421c6b1ac463eeea8bd4c73178e2d.png" data-src="https://gyazo.com/917421c6b1ac463eeea8bd4c73178e2d.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?85bf3f80bd772c9afe98864f4331cc17</span>
+                      <div class="item-header developer-name">Yu-Gi-Oh Team</div>
+                      <span class="app-name">Yu-Gi-Oh! Legacy of the Duelist</span>
+                      <div class="item-footer description">Mobile Download iOS &amp; Android</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/177b351a9cba757f42a261162fefca36.png','ZEDGE','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/177b351a9cba757f42a261162fefca36.png" data-src="https://gyazo.com/177b351a9cba757f42a261162fefca36.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?3809677ddf607e4ca8c3e1e6e1acdabc</span>
+                      <div class="item-header developer-name">Zedge Team</div>
+                      <span class="app-name">ZEDGE</span>
+                      <div class="item-footer description">Free Wallpapers &amp; Ringtones</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            
+              <li>
+                <a class="external item-link item-content" onclick="myImg('SSMSky_files/ea0ee448ba7f617105926310db964bf0.png','Zombie Tsunami','about:blank')" role="button" aria-expanded="false" aria-controls="myModal">
+                  <div class="item-media"><img src="SSMSky_files/ea0ee448ba7f617105926310db964bf0.png" data-src="https://gyazo.com/ea0ee448ba7f617105926310db964bf0.png" class="lazyload lazy-fade-in" width="42px" height="42px" style="border-radius: 10px;"></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <span class="locker-link">https://verify.stc.tools/od.php?c515d992ea5d9c9c72b2ccc41d71f499</span>
+                      <div class="item-header developer-name">Zombie Tsunami Team</div>
+                      <span class="app-name">Zombie Tsunami</span>
+                      <div class="item-footer description">No Jailbreak or Root Required!</div>
+                    </div>
+                    <div class="item-after"></div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="popup-backdrop"></div></div>
+		<!-- Modal -->
+  <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="popup-backdrop backdrop-in"></div>
+        <div class="modal-header">
+          <button type="button" class="close" onclick="closeFunction()">&times;</button>
+          <div class="popup modal-in" style="background: rgb(29, 29, 39) !important; display: block;">
+              <div class="fake-homescreen" style="background-color:#4cd137">
+                <a onclick="closeFunction()" class="close-button"></a>  
+                  <div class="iphone-display" aria-hidden="true">
+                    <div class="app-icon-area">
+                      <div class="app-icon-region">
+                        <img id="iimg" alt="app icon" src="#" class="app-icon" style="width: 33px; height: 33px;">
+                      </div>
+                      <div class="fake-homescreen-app-name" style="font-size:7.5px!important">
+                        <span id="appName" class="installingAppName">AdBlock Plus</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block" style="color:#fff">
+                  <center>
+                    <h1 class="">Injection required!</h1>
+                    <p class="">Follow the instructions on the next screen.</p>
+                    <br>
+                    <button  onclick="myFunction()" id="locker-btn" class="col button button-big button-fill button-round external" style="background-color:#4cd137!important;">Start injection</button>
+                    <p id="dv" style="display: none;"><span id="device"></span> ¡ü <span id="version"></span></p>
+                  </center>
+                </div>
+            </div>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Progress -->
+  <div role="dialog">
+      
+    <div class="modal-dialog">
+        <div class="dialog-backdrop backdrop-in" id="myPopup1" style="display: none"></div>
+  <div class="dialog dialog-no-buttons dialog-progress modal-in" id="myPopup" style="display: none; margin-top: -41px;">
+      
+          <div class="dialog-inner">
+            <div class="dialog-title">Injecting...</div><div id="dt" class="dialog-text">Sit tight</div>
+            
+            
+              <div class="progressbar">
+              <span id="bar1" style="width: 0%; display: inline-block;
+	height: 100%; transform: scale(-1, 1);"></span>
+              </div>
+            
+          </div>
+          
+        </div>
+		</div>
+		</div>
+		<script>
+	
+
+		
+function myImg(img,anam,url) 
+{
+        document.getElementById("iimg").src = img; 
+        
+        document.getElementById("appName").innerHTML = anam;
+        
+        window.myvar = url;
+ document.getElementById("myModal").className = "modal in";
+    document.getElementById("myModal").style.display = "block";
+    }		
+		
+function closeFunction(){
+    document.getElementById("myModal").className = "modal";
+    document.getElementById("myModal").style.display = "none";
+//    var xs = document.getElementsByClassName("modal-content");
+  
+//    xs.style.display = "none";
+//    var xx = document.getElementById("myPopup");
+//    xx.style.display = "none";
+
+  
+ 
+}		
+		
+// When the user clicks on div, open the popup
+function myFunction() {
+    var x = document.getElementById("myPopup1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var x = document.getElementById("myPopup");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+ 
+  var i = 0;
+    $("#bar1").animate(
+        {
+            width: "100%"
+        },             
+        {
+            duration: 20000,
+            step: function(){
+                //console.log( "width: ", i++ );
+                console.log($(this).width());
+            },
+            complete : function(){
+              //  location.href = 'about:blank';
+              location.href = window.myvar;
+            }
+        });
+        
+        
+     $(document).ready(function() {
+
+      function changeText(){
+        $("#dt").text('Downloading')
+      }
+
+      setTimeout(changeText, 1000);
+
+    });
+    $(document).ready(function() {
+
+      function changeText(){
+        $("#dt").text('Unpacking')
+      }
+
+      setTimeout(changeText, 8000);
+
+    });
+    $(document).ready(function() {
+
+      function changeText(){
+        $("#dt").text('Starting Injection')
+      }
+
+      setTimeout(changeText, 12000);
+
+    });
+    
+    $(document).ready(function() {
+
+      function changeText(){
+        $("#dt").text('Setting up final stage')
+      }
+
+      setTimeout(changeText, 17000);
+
+    });
+
+
+}
+</script>
+		
+		<script src="SSMSky_files/jquery.min.js.download" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="SSMSky_files/lazyload.js.download"></script>
+	
+		<script src="SSMSky_files/routes.js.download"></script>
+		<!--<script src="./SSMSky_files/sideload.js.download"></script>-->
+		<script src="SSMSky_files/sideload.js"></script>
+		<script type="text/javascript" src="SSMSky_files/device.class.js.download"></script>
+ <script type = "text/javascript" 
+         src = "../cdnjs.cloudflare.com/ajax/libs/framework7/3.0.0/js/framework7.min.js"></script>
+      
+      <script>
+         var myApp = new Framework7();
+         var mainView = myApp.addView('.view-main');
+      </script>
+	
+</body>
+<!-- Mirrored by HTTrack Website Copier/3.x [XR/YP'2000] -->
+</html>
